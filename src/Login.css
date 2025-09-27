@@ -1,0 +1,463 @@
+
+body {
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.header-section {
+    background-color: lightslategray;
+    text-align: left;
+    margin-top: 0;
+}
+.header-image {
+    height: 5em;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin-left: 200px;
+}
+
+.header-image img {
+    height: 250%;
+    width: 1200px;
+}
+.promo {
+    text-align: center;
+    font-weight: bold;
+    color: lightgrey;
+    margin: 5px 0;
+}
+.promo-container {
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    text-shadow: 1px 1px black;
+    background-color: lightslategrey;
+}
+
+h1 {
+    color: lightslategrey;
+    font-family: Candles;
+    font-size: 40pt;
+    /*text-shadow: 2px 2px black;*/
+    text-align: left;
+
+}
+
+h2 {
+    text-align: center;
+}
+p {
+    font-family: "Agency FB";
+    font-size: 20px;
+}
+
+
+.search-form {
+    display: flex;
+    align-content: end;
+}
+.error-border {
+    border-color: red;
+}
+
+
+
+.search-button {
+    padding: 10px 10px;
+    background-color: #b22222;
+    color: white;
+    border: none;
+}
+
+.search-button:hover {
+    background-color: #a21a1a;
+}
+.promo-categories {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    text-shadow: 1px 1px black;
+    background-color: lightsteelblue;
+
+}
+.categories {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    margin: 5px 0;
+    font-weight: bold;
+}
+.categories:hover {
+    color: blue;
+}
+.bold-text {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-gallery p {
+    margin: 5px;
+}
+
+.image-gallery img {
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.5);
+}
+
+
+/*.centered {*/
+/*    text-align: center;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+.client-table {
+    margin: 0 auto;
+}
+
+.client-table th, .client-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.client-table th {
+    background-color: #f2f2f2;
+}
+h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+li {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h4 {
+    text-align: center;
+    margin: 20px 0;
+}
+h6 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 17pt;
+    margin: 20px 0;
+}
+
+ol {
+    list-style-position: inside;
+    padding: 0;
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+    /*width: auto;*/
+    /*height: auto;*/
+}
+
+.forms-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-panel, .register-panel {
+    max-width: 400px;
+    margin: 20px;
+    padding: 50px;
+    /*border: 1px solid #ccc;*/
+    border-radius: 8px;
+    background-color: white;
+}
+
+.login-panel h2, .register-panel h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+}
+
+.login-panel label, .register-panel label {
+    font-weight: bold;
+}
+
+.login-panel input, .register-panel input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.login-panel button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.register-panel button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0022ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.login-panel button:hover, .register-panel button:hover {
+    background-color: green;
+}
+
+.cart-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    height: 100%;
+}
+
+.login-box {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.registration-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.registration-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.registration-form .form-group {
+    margin-bottom: 15px;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.registration-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2e0513;
+}
+
+
+.success-message {
+    color: green;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 15px;
+}
+html {
+    height: 100%;
+}
+
+.registration-box {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.registration-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.registration-box .user-box {
+    position: relative;
+}
+
+.registration-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.registration-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.registration-box .user-box input:focus ~ label,
+.registration-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #f40303;
+    font-size: 12px;
+}
+
+.registration-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #f40303;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
