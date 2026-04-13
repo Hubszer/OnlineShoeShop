@@ -39,32 +39,190 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Sklep internetowy BestHM.PL
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Vertabelo baza danych:
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-- Created by Vertabelo (http://vertabelo.com)
 
-### Making a Progressive Web App
+-- Last modification date: 2025-01-10 13:20:38.649
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+-- tables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-- Table: Cart
 
-### Deployment
+CREATE TABLE Cart (
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+id int NOT NULL AUTO_INCREMENT,
 
-### `npm run build` fails to minify
+total_price int NOT NULL,
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+created_at date NOT NULL,
+
+Users_id int NOT NULL,
+
+CONSTRAINT Cart_pk PRIMARY KEY (id)
+
+);
+
+
+-- Table: Order_product
+
+CREATE TABLE Order_product (
+
+id int NOT NULL AUTO_INCREMENT,
+
+Order_id int NOT NULL,
+
+Product_id int NOT NULL,
+
+quantity int NOT NULL,
+
+CONSTRAINT Order_product_pk PRIMARY KEY (id)
+
+);
+
+
+-- Table: Orders
+
+CREATE TABLE Orders (
+
+id int NOT NULL AUTO_INCREMENT,
+
+User_id int NOT NULL,
+
+date date NOT NULL,
+
+totalPrice int NOT NULL,
+
+CONSTRAINT Orders_pk PRIMARY KEY (id)
+
+);
+
+
+-- Table: Product_cart
+
+CREATE TABLE Product_cart (
+
+id int NOT NULL AUTO_INCREMENT,
+
+Cart_id int NOT NULL,
+
+Products_id int NOT NULL,
+
+quantity int NOT NULL,
+
+CONSTRAINT Product_cart_pk PRIMARY KEY (id)
+
+);
+
+
+-- Table: Products
+
+CREATE TABLE Products (
+
+id int NOT NULL AUTO_INCREMENT,
+
+name varchar(255) NOT NULL,
+
+brand varchar(255) NOT NULL,
+
+price int NOT NULL,
+
+description varchar(255) NOT NULL,
+
+CONSTRAINT Products_pk PRIMARY KEY (id)
+
+);
+
+
+-- Table: Users
+
+CREATE TABLE Users (
+
+id int NOT NULL AUTO_INCREMENT,
+
+username varchar(255) NOT NULL UNIQUE,
+
+name varchar(255) NOT NULL,
+
+surname varchar(255) NOT NULL,
+
+email varchar(255) NOT NULL UNIQUE,
+
+password varchar(255) NOT NULL,
+
+CONSTRAINT Users_pk PRIMARY KEY (id)
+
+);
+
+
+-- foreign keys
+
+-- Reference: Cart_Users (table: Cart)
+
+ALTER TABLE Cart ADD CONSTRAINT Cart_Users FOREIGN KEY Cart_Users (Users_id)
+
+REFERENCES Users (id);
+
+
+-- Reference: Order_product_Order (table: Order_product)
+
+ALTER TABLE Order_product ADD CONSTRAINT Order_product_Order FOREIGN KEY Order_product_Order (Order_id)
+
+REFERENCES Orders (id);
+
+
+-- Reference: Order_product_Product (table: Order_product)
+
+ALTER TABLE Order_product ADD CONSTRAINT Order_product_Product FOREIGN KEY Order_product_Product (Product_id)
+
+REFERENCES Products (id);
+
+
+-- Reference: Orders_User (table: Orders)
+
+ALTER TABLE Orders ADD CONSTRAINT Orders_User FOREIGN KEY Orders_User (User_id)
+
+REFERENCES Users (id);
+
+
+-- Reference: Product_cart_Cart (table: Product_cart)
+
+ALTER TABLE Product_cart ADD CONSTRAINT Product_cart_Cart FOREIGN KEY Product_cart_Cart (Cart_id)
+
+REFERENCES Cart (id);
+
+
+-- Reference: Product_cart_Products (table: Product_cart)
+
+ALTER TABLE Product_cart ADD CONSTRAINT Product_cart_Products FOREIGN KEY Product_cart_Products (Products_id)
+
+REFERENCES Products (id);
+
+
+-- End of file.
+
+
+Uruchomienie aplikacji:
+
+Aplikacja korzysta z 2 projektow oraz bazy danych na xammpie
+
+1- TINSQL – backedn aplikacj w expressie
+
+2- Reactwithdb – frontend aplikacji w reacie
+
+
+
+Opis aplikacji:
+
+
+Użytkownik może się logować,rejestrować
+
+
+Tylko zalogowany użytkownik może dodawać produkty do koszyka, dodawać produkty do listy i składać zamówienia z produktów, które już znajdują się w koszyku.(może również przegladac swoje zamówienia)
